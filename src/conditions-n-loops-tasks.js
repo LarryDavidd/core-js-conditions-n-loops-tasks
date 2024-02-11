@@ -95,9 +95,9 @@ function canQueenCaptureKing(queen, king) {
  *  3, 0, 3   => false
  */
 function isIsoscelesTriangle(a, b, c) {
-  const longestSide = Math.max(a, b, c);
-  const sumOfShorterSides = a + b + c - longestSide;
-  return sumOfShorterSides > longestSide;
+  const long = Math.max(a, b, c);
+  const res = a + b + c - long;
+  return res > long;
 }
 
 /**
@@ -291,11 +291,8 @@ function getIndexOf(str, letter) {
  *  12345, 6    => false
  */
 function isContainNumber(num, digit) {
-  const str = String(num);
-  const len = str.length;
-
-  for (let i = 0; i < len; i += 1) {
-    if (Number(str[i]) === digit) {
+  for (let i = 0; i < String(num).length; i += 1) {
+    if (Number(String(num)[i]) === digit) {
       return true;
     }
   }
